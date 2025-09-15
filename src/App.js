@@ -1,4 +1,6 @@
 // Импортируем  стили для компонента App
+import { useState } from 'react';
+
 import './App.css';
 
 import Track from './components/Track';
@@ -7,23 +9,45 @@ import Header from './components/Header';
 // создание главного компонента App
 
 function App(){
+  const [tracks, setTracks] = useState([
+    {
+      id: 1,
+      title: "bogdan",
+      artist: "mc Bogdan",
+      album: "Bog Est",
+      duration: "5:23"
+    },
+    {
+      id: 2,
+      title: "Oleg",
+      artist: "Devil my cry",
+      album: "V",
+      duration: "6:02"
+    },
+    {
+      id: 3,
+      title: "Osman",
+      artist: "Kto zdes",
+      album: "Pizdec",
+      duration: "2:42"
+    }
+  ]);
+
   // компонент просто возвращает разметку (JSX)
   return(
     <div className='App'>
       <Header />
-      <Track 
-      title = "42"
-      artist="Serega Pirat"
-      album = "Goyda"
-      duration = "42:24"
-      />
-      <Track 
-      title = "41"
-      artist="Saraga Pirat"
-      album = "Goydg"
-      duration = "43:14"
-      />
-      <h1> Мое первое приложение Musipoty</h1>
+      {tracks.map(track => (
+        <Track
+         key={track.id}
+         // key помогает Reacty отслеживать из списка элементы
+
+         title={track.title}
+         artist={track.artist}
+         album={track.album}
+         duration={track.duration}
+        />
+      ))}
     </div>
   );
 }

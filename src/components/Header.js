@@ -1,23 +1,22 @@
 // Компонент - это просто функция, которая возвращает JSX он же html
+import { useState } from 'react';
+
 import'./Header.css';
 function Header(){
     const webSiteTitle = "Musipoty - музон"
-    const currentUser = {
-        name: "Олег",
-        isLoggedIn: false
-    };
+    const [isLoggedIn, setIsloggedIn] = useState(false);
 
     function handleLoginClick(){
-        alert(currentUser.isLoggedIn ? 'До свидания!' : 'Добро пожаловать?');
+        setIsloggedIn(!isLoggedIn);
     }
-  
+
     return(
         <header className="header">
             <div className="logo">
                 {webSiteTitle}
             </div>
             <button className="login-btn" onClick={handleLoginClick}>
-                {currentUser.isLoggedIn ? 'Выйти' : 'Войти'}
+                {isLoggedIn ? 'Выйти' : 'Войти'}
             </button>
         </header>
     );
