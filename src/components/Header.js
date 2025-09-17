@@ -15,9 +15,6 @@ function Header(){
             <div className="logo">
                 {webSiteTitle}
             </div>
-            <button className="login-btn" onClick={handleLoginClick}>
-                {isLoggedIn ? 'Выйти' : 'Войти'}
-            </button>
             <div className='MenuDiv'>
                 <p>Меню</p>
                 <nav>
@@ -25,6 +22,10 @@ function Header(){
                     <button>О нас</button>
                 </nav>
             </div>
+            <button className="login-btn" onClick={handleLoginClick}>
+                {isLoggedIn ? 'Выйти' : 'Войти'}
+            </button>
+
         </header>
     );
 }
