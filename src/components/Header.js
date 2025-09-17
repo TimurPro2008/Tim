@@ -18,6 +18,13 @@ function Header(){
             <button className="login-btn" onClick={handleLoginClick}>
                 {isLoggedIn ? 'Выйти' : 'Войти'}
             </button>
+            <div className='MenuDiv'>
+                <p>Меню</p>
+                <nav>
+                    <button>Каталог</button>
+                    <button>О нас</button>
+                </nav>
+            </div>
         </header>
     );
 }

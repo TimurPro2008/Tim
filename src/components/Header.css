@@ -19,3 +19,13 @@
     padding: 0.5rem 1rem;
     cursor: pointer;
 }
+.MenuDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+nav > button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
